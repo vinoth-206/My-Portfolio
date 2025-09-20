@@ -1,10 +1,4 @@
-/*
 
-Stimulus Template
-
-http://www.templatemo.com/tm-498-stimulus
-
-*/
 
 body {
 	background: #ffffff;
@@ -19,11 +13,6 @@ html,body {
   height: 100%;
 }
 
-
-
-/*---------------------------------------
-    Typorgraphy              
------------------------------------------*/
 
 h1,h2,h3,h4,h5,h6 {
   font-style: normal;
@@ -198,9 +187,6 @@ footer {
 
 
 
-/*---------------------------------------
-    General               
------------------------------------------*/
 
 html{
   -webkit-font-smoothing: antialiased;
@@ -232,10 +218,6 @@ a:hover, a:active, a:focus {
 }
 
 
-
-/*---------------------------------------
-    Preloader section              
------------------------------------------*/
 
 .preloader {
   position: fixed;
