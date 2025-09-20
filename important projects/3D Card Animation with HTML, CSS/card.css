@@ -1,0 +1,197 @@
+  
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #0f0f1a;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+    h1 { margin-bottom: 30px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      width: 100%;
+      max-width: 1400px;
+    }
+    .card {
+      position: relative;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      overflow: hidden;
+      height: 320px;
+      perspective: 1200px;
+      transform-style: preserve-3d;
+      transition: all .6s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card .content {
+      padding: 15px;
+    }
+    .card h2 {
+      margin: 10px 0 5px;
+      color: #ffe08a;
+      font-size: 1.2rem;
+    }
+    .card p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* 1. Flip 3D */
+    .flip3d {
+      transform-style: preserve-3d;
+    }
+    .flip3d .front, .flip3d .back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+    }
+    .flip3d .back {
+      transform: rotateY(180deg);
+      background: #252545;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .flip3d:hover {
+      transform: rotateY(180deg);
+    }
+
+    /* 2. Glassmorphism */
+    .glass {
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.2);
+      box-shadow: 0 8px 40px rgba(0,0,0,.6);
+    }
+
+    /* 3. Cube Rotate */
+    .cube {
+      transform-style: preserve-3d;
+      transition: transform 1s;
+    }
+    .cube:hover { transform: rotateY(180deg) rotateX(10deg); }
+
+    /* 4. Gradient Border */
+    .gradient-border {
+      border: 4px solid transparent;
+      background-clip: padding-box;
+    }
+    .gradient-border::before {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 20px;
+      background: linear-gradient(45deg,#ff00ff,#00ffff,#ffcc00);
+      z-index: -1;
+      animation: borderflow 5s linear infinite;
+    }
+    @keyframes borderflow {
+      0% { filter: hue-rotate(0deg);}
+      100% { filter: hue-rotate(360deg);}
+    }
+
+    /* 5. Depth Pop */
+    .depth:hover {
+      transform: scale(1.05) translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,.8);
+    }
+
+    /* 6. Hologram */
+    .holo {
+      background: linear-gradient(135deg, rgba(255,255,255,.15), rgba(255,255,255,.05));
+    }
+    .holo::after {
+      content:"";
+      position:absolute;
+      inset:-50%;
+      background: conic-gradient(from 0deg, #0ff, #f0f, #ff0, #0ff);
+      animation: rotate 6s linear infinite;
+      opacity:0.2;
+    }
+    @keyframes rotate { 100%{ transform: rotate(360deg);} }
+
+    /* 7. Ripple */
+    .ripple { overflow:hidden; position:relative;}
+    .ripple::after {
+      content:""; position:absolute; width:0; height:0; background:rgba(255,255,255,.2);
+      border-radius:50%; inset:50% auto auto 50%;
+      transform:translate(-50%,-50%);
+      transition:.6s;
+    }
+    .ripple:hover::after {
+      width:300%; height:300%;
+    }
+
+    /* 8. Carousel Spin */
+    .carousel { transition:transform 1s; }
+    .carousel:hover { transform: rotateY(360deg); }
+
+    /* 9. Glow */
+    .glow:hover {
+      box-shadow: 0 0 20px #0ff, 0 0 40px #f0f, 0 0 60px #ff0;
+      transform: scale(1.05);
+    }
+
+    /* 10. Tilt */
+    .tilt:hover {
+      transform: rotateX(10deg) rotateY(-10deg) scale(1.05);
+    }
+
+    /* 11. Profile Card */
+    .profile {
+      overflow: hidden;
+      position: relative;
+      background: rgba(255,255,255,0.05);
+      transition: transform .5s, box-shadow .5s;
+      padding-top: 20px;
+    }
+    .profile:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 20px 50px rgba(0,0,0,.7);
+    }
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-top: 10px;
+      border: 4px solid #ffe08a;
+      object-fit: cover;
+    }
+    .profile .content {
+      padding: 20px;
+    }
+    .profile h2 {
+      margin: 15px 0 5px;
+      color: #ffe08a;
+    }
+    .profile p {
+      opacity: 0.8;
+    }
+    .profile .socials {
+      margin-top: 15px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+    .profile .socials a {
+      color: #fff;
+      font-size: 1.3rem;
+      transition: color .3s, transform .3s;
+      text-decoration: none;
+    }
+    .profile .socials a:hover {
+      color: #0ff;
+      transform: scale(1.3);
+    }
+  

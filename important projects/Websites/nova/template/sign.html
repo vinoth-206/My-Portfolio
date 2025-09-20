@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign</title>
+    <link rel="stylesheet" href="sign.css">
+    <script src="action.js"></script>
+</head>
+<body>
+    <div class="main">
+        <!--Sign in -->
+  <div class="container" id="sign-form" style="display: none;">
+    <h2>SIGN IN</h2>
+    <form action="">
+        <label for="text">Frist Name</label>
+        <input type="text" placeholder="" required>
+        <label for="text">Last Name</label>
+        <input type="text" placeholder="" required>
+        <label for="email">Email</label>
+        <input type="email" placeholder="Email" required>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Sign In</button>
+    </form>
+    <div class="toggle-btn" onclick="toggleForms()">Already have an accound? Login </div>
+  </div>
+    <!--Login-->
+      <div class="container2" id="login-form">
+    <h2>LOGIN</h2>
+    <form action="">
+        <label for="email">Email</label>
+        <input type="email" placeholder="Email" required>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <div class="toggle-btn" onclick="toggleForms()" >Don't have an account?Sign up</div>
+    </div>
+    </div>
+    
+    
+</body>
+</html>

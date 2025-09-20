@@ -1,0 +1,134 @@
+
+  body {
+    background: #0d0d0d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    color: cyan;
+    text-align: center;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan;
+    margin-bottom: 40px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
+    grid-template-rows: repeat(2, 450px);
+    gap: 30px;
+  }
+
+  .scroll-container {
+    overflow-y: auto;
+    border-radius: 15px;
+    padding: 20px;
+    scroll-behavior: smooth;
+    position: relative;
+  }
+
+  /* ---------- Model 1 ---------- */
+  .model1 {
+    background: linear-gradient(145deg, #222, #111);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  }
+
+  .model1 p {
+    margin: 10px 0;
+    padding: 10px;
+    background: #111;
+    border-left: 5px solid cyan;
+    box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+    transition: 0.3s;
+  }
+
+  .model1 p:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0 15px cyan, 0 0 30px cyan, 0 0 50px cyan;
+  }
+
+  /* ---------- Model 2 ---------- */
+  .model2 {
+    background: linear-gradient(145deg, #330000, #110000);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+  }
+
+  .model2 p {
+    margin: 10px 0;
+    padding: 10px;
+    background: #220000;
+    border-left: 5px solid red;
+    box-shadow: 0 0 10px red, 0 0 20px red;
+    transition: 0.3s;
+  }
+
+  .model2 p:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0 15px red, 0 0 30px red, 0 0 50px red;
+  }
+
+  /* ---------- Model 3 ---------- */
+  .model3 {
+    background: linear-gradient(145deg, #002200, #001100);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
+  }
+
+  .model3 p {
+    margin: 10px 0;
+    padding: 10px;
+    background: #001100;
+    border-left: 5px solid lime;
+    box-shadow: 0 0 10px lime, 0 0 20px lime;
+    transition: 0.3s;
+  }
+
+  .model3 p:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0 15px lime, 0 0 30px lime, 0 0 50px lime;
+  }
+
+  /* ---------- Model 4 ---------- */
+  .model4 {
+    background: linear-gradient(145deg, #000033, #000011);
+    box-shadow: 0 0 30px rgba(0, 0, 255, 0.4);
+  }
+
+  .model4 p {
+    margin: 10px 0;
+    padding: 10px;
+    background: #000022;
+    border-left: 5px solid blue;
+    box-shadow: 0 0 10px blue, 0 0 20px blue;
+    transition: 0.3s;
+  }
+
+  .model4 p:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0 15px blue, 0 0 30px blue, 0 0 50px blue;
+  }
+
+  /* ---------- Scrollbar for all models ---------- */
+  .scroll-container::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .scroll-container::-webkit-scrollbar-track {
+    background: #111;
+  }
+
+  .scroll-container::-webkit-scrollbar-thumb {
+    background: cyan;
+    border-radius: 5px;
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  }
+
+  .scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: cyan #111;
+  }

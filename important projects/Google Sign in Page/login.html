@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sign in - ExampleApp</title>
+<link rel="stylesheet" href="C:\Users\vinot\OneDrive\Desktop\important projects\Google Sign in Page\login.css">
+<link rel="stylesheet" href="C:\Users\vinot\OneDrive\Desktop\My portfoliyo\Vinoth\important projects\Google Sign in Page\login.css">
+</head>
+<body>
+<div class="wrap" role="main" aria-label="Sign in demo">
+  <!-- Branding area -->
+  <div class="brand" aria-hidden="true">
+    <div class="logo">E</div>
+    <div class="meta">
+      <p class="title">Welcome to</p>
+      <p class="sub">ExampleApp</p>
+    </div>
+  </div>
+
+  <!-- Card (email step) -->
+  <form class="card" id="step-email" autocomplete="on" onsubmit="return goToPassword()">
+    <h1>Sign in</h1>
+    <p class="lead">Use your ExampleApp account</p>
+
+    <div class="field">
+      <label for="email">Email or phone</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com" inputmode="email" />
+      <div id="emailError" class="error" aria-live="polite" style="display:none"></div>
+    </div>
+
+    <div class="field helper">
+      <div class="small">Not your device? Use Guest mode to sign in privately.</div>
+      <a class="link" href="#" onclick="event.preventDefault()">Learn more</a>
+    </div>
+
+    <div class="row">
+      <button type="button" class="btn ghost" onclick="alert('Help not implemented in demo')">Help</button>
+      <button type="submit" class="btn">Next</button>
+    </div>
+
+    <div class="alt">
+      <div>Not your account? <a href="#" class="link" onclick="event.preventDefault()">Use another account</a></div>
+      <div style="margin-top:10px"><a href="#" class="link" onclick="event.preventDefault()">Create account</a></div>
+    </div>
+  </form>
+
+  <!-- Card (password step) - hidden initially -->
+  <form class="card" id="step-password" style="display:none" onsubmit="return signIn()">
+    <h1>Welcome</h1>
+    <div class="profile" aria-hidden="false">
+      <div class="avatar" id="avatarLetter">E</div>
+      <div>
+        <div class="who" id="whoName">Example User</div>
+        <div class="mail" id="whoMail">you@example.com</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="password">Enter your password</label>
+      <input id="password" name="password" type="password" required placeholder="Password" />
+      <div id="pwError" class="error" aria-live="polite" style="display:none"></div>
+    </div>
+
+    <div class="field helper">
+      <label style="display:flex; align-items:center; gap:8px"><input type="checkbox" /> Show password</label>
+      <a class="link" href="#" onclick="event.preventDefault()">Forgot password?</a>
+    </div>
+
+    <div class="row">
+      <button type="button" class="btn ghost" onclick="backToEmail()">Back</button>
+      <button type="submit" class="btn">Sign in</button>
+    </div>
+
+    <div class="alt">
+      <div style="margin-top:10px"><a href="#" class="link" onclick="event.preventDefault()">Sign in with a different account</a></div>
+    </div>
+  </form>
+</div>
+
+<script>
+/* Small JS only to simulate step transitions and validation.
+   This is minimal and safe for demo purposes. */
+
+function goToPassword(){
+  const emailInput = document.getElementById('email');
+  const email = emailInput.value.trim();
+  const err = document.getElementById('emailError');
+  err.style.display = 'none';
+
+  // Simple validation
+  if(!email || !/.+@.+\..+/.test(email)){
+    err.textContent = 'Please enter a valid email address.';
+    err.style.display = 'block';
+    emailInput.focus();
+    return false;
+  }
+
+  // Populate the password card with the email
+  document.getElementById('whoMail').textContent = email;
+  // Set avatar initial
+  const initial = email.charAt(0).toUpperCase();
+  document.getElementById('avatarLetter').textContent = initial;
+  document.getElementById('whoName').textContent = email.split('@')[0];
+
+  document.getElementById('step-email').style.display = 'none';
+  document.getElementById('step-password').style.display = 'block';
+  document.getElementById('password').focus();
+  return false;
+}
+
+function backToEmail(){
+  document.getElementById('step-password').style.display = 'none';
+  document.getElementById('step-email').style.display = 'block';
+  document.getElementById('email').focus();
+}
+
+function signIn(){
+  const pw = document.getElementById('password').value;
+  const err = document.getElementById('pwError');
+  err.style.display = 'none';
+  if(!pw || pw.length < 4){ // demo rule
+    err.textContent = 'Incorrect password. Try again.';
+    err.style.display = 'block';
+    document.getElementById('password').focus();
+    return false;
+  }
+
+  // Demo success - in a real app you'd send credentials to your server
+  alert('Signed in (demo) - replace with real auth flow for production.');
+  return false;
+}
+</script>
+</body>
+</html>

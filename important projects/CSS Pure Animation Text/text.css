@@ -1,0 +1,144 @@
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #00f5d4;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .box {
+      background: rgba(255,255,255,0.05);
+      padding: 40px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Animations */
+    .fade-in { animation: fadeIn 2s ease-in-out infinite alternate; }
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+    .slide-left { animation: slideLeft 2s ease-in-out infinite alternate; }
+    @keyframes slideLeft { from {transform: translateX(100%);} to {transform: translateX(0);} }
+
+    .slide-right { animation: slideRight 2s ease-in-out infinite alternate; }
+    @keyframes slideRight { from {transform: translateX(-100%);} to {transform: translateX(0);} }
+
+    .bounce { animation: bounce 1.5s infinite alternate; }
+    @keyframes bounce { 0%{transform: translateY(0);} 100%{transform: translateY(-20px);} }
+
+    .zoom { animation: zoom 2s infinite alternate; }
+    @keyframes zoom { from {transform: scale(0.8);} to {transform: scale(1.2);} }
+
+    .rotate { animation: rotate 3s infinite linear; }
+    @keyframes rotate { from {transform: rotate(0);} to {transform: rotate(360deg);} }
+
+    .typing {
+      display: inline-block;
+      white-space: nowrap;
+      border-right: 2px solid #00f5d4;
+      width: 0;
+      overflow: hidden;
+      animation: typing 4s steps(20) infinite alternate, blink 0.7s infinite;
+    }
+    @keyframes typing { from { width: 0; } to { width: 100%; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    .neon { 
+      animation: neon 1.5s ease-in-out infinite alternate; 
+      color: #fff;
+    }
+    @keyframes neon {
+      from { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff; }
+      to { text-shadow: 0 0 20px #0ff, 0 0 40px #0ff, 0 0 60px #0ff; }
+    }
+
+    .wave { animation: wave 2s infinite; display: inline-block; }
+    @keyframes wave {
+      0%, 60%, 100% { transform: rotate(0); }
+      30% { transform: rotate(20deg); }
+    }
+
+    .shake { animation: shake 0.5s infinite; }
+    @keyframes shake {
+      0%,100%{ transform: translateX(0);}
+      25%{ transform: translateX(-5px);}
+      75%{ transform: translateX(5px);}
+    }
+
+    .swing { animation: swing 2s infinite ease-in-out; }
+    @keyframes swing {
+      0% { transform: rotate(10deg); }
+      50% { transform: rotate(-10deg); }
+      100% { transform: rotate(10deg); }
+    }
+
+    .pulse { animation: pulse 2s infinite; }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .flip { animation: flip 2s infinite; }
+    @keyframes flip {
+      from { transform: rotateY(0); }
+      to { transform: rotateY(360deg); }
+    }
+
+    .glitch { position: relative; }
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: inherit;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+    .glitch::before {
+      animation: glitchTop 1s infinite linear alternate-reverse;
+      color: #f0f;
+    }
+    .glitch::after {
+      animation: glitchBottom 1s infinite linear alternate-reverse;
+      color: #0ff;
+    }
+    @keyframes glitchTop { from { clip: rect(0, 9999px, 0, 0); } to { clip: rect(0, 9999px, 50%, 0); transform: translateX(-5px);} }
+    @keyframes glitchBottom { from { clip: rect(50%, 9999px, 9999px, 0);} to { clip: rect(0, 9999px, 9999px, 0); transform: translateX(5px);} }
+
+    .gradient { 
+      background: linear-gradient(90deg, #ff0, #f0f, #0ff); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent; 
+      animation: gradientMove 3s linear infinite; 
+      background-size: 200%;
+    }
+    @keyframes gradientMove { from{background-position:0;} to{background-position:200%;} }
+
+    .expand { animation: expand 2s infinite alternate; }
+    @keyframes expand {
+      from { letter-spacing: 0; }
+      to { letter-spacing: 8px; }
+    }

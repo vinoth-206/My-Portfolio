@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lamp Glowing Effect</title>
+  <link rel="stylesheet" href="C:\Users\vinot\OneDrive\Desktop\My portfoliyo\Vinoth\important projects\Lamp Glowing Effect with HTML, CSS\lamp.css">
+</head>
+<body>
+  <div class="lamp">
+    <div class="bulb"></div>
+    <div class="beam"></div>
+  </div>
+  <button class="btn" id="switch">Turn On</button>
+
+  <script>
+    const btn = document.getElementById("switch");
+    btn.addEventListener("click", () => {
+      document.body.classList.toggle("on");
+      if (document.body.classList.contains("on")) {
+        btn.textContent = "Turn Off";
+        btn.classList.add("on");
+      } else {
+        btn.textContent = "Turn On";
+        btn.classList.remove("on");
+      }
+    });
+  </script>
+</body>
+</html>
+```

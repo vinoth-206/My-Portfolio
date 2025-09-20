@@ -1,0 +1,97 @@
+  
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #0f172a;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #00f5d4;
+      text-align: center;
+    }
+
+    .social-wrapper {
+      width: 50vh;
+      height: 50vh;
+      background: #1e293b;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      padding: 20px;
+    }
+
+    .social-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px 30px;
+      justify-items: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .social-container a {
+      width: 60px;
+      height: 60px;
+      background: #0f172a;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 26px;
+      text-decoration: none;
+      transition: 0.4s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Hover gradient effect */
+    .social-container a::before {
+      content: "";
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      background: linear-gradient(45deg, #00f5d4, #0ff, #00b4d8);
+      top: -100%;
+      left: -100%;
+      transform: rotate(45deg);
+      transition: 0.5s;
+    }
+
+    .social-container a:hover::before {
+      top: 0;
+      left: 0;
+    }
+
+    .social-container a i {
+      position: relative;
+      z-index: 2;
+      transition: 0.3s;
+    }
+
+    .social-container a:hover i {
+      transform: scale(1.3) rotate(10deg);
+    }
+
+    /* Individual Hover Colors */
+    .facebook:hover { color: #1877f2; }
+    .twitter:hover { color: #1da1f2; }
+    .instagram:hover { color: #e1306c; }
+    .linkedin:hover { color: #0077b5; }
+    .youtube:hover { color: #ff0000; }
+    .whatsapp:hover { color: #25d366; }
+    .pinterest:hover { color: #bd081c; }
+    .reddit:hover { color: #ff4500; }
+    .github:hover { color: #333; }
+    .tiktok:hover { color: #000; }
