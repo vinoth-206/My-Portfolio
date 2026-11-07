@@ -152,7 +152,7 @@ footer {
     left: 0;
 }
 .background-imag {
-    background: url('../images/skill\ img.jpg') no-repeat;
+    background: url('../images/skill/img.jpg') no-repeat;
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -354,7 +354,7 @@ a:hover, a:active, a:focus {
 }
 
 #home .home-img {
-  background: url('../images/vinoth.png m b nmkhjb gbh n') no-repeat;
+  background: url('../images/vinoth.jpg') no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   width: 100%;
